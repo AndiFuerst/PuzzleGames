@@ -2,6 +2,8 @@
 Main File to start PuzzleGames.
 """
 
+from MainMenu.main_menu_controller import MainMenuController
+
 if __name__ == "__main__":
-    print("Hello World!")
-    input()
+    mmc = MainMenuController()
+    mmc.run()
