@@ -2,7 +2,7 @@
 This file holds the Model for the Main Menu
 """
 
-from Games.base_game import BaseGame
+from Games.base_game_controller import BaseGameController
 from exceptions import ItemNotFoundError
 
 class MainMenuModel:
@@ -10,7 +10,7 @@ class MainMenuModel:
     This class holds the Model for the Main Menu
     """
     def __init__(self):
-        self._games = [BaseGame]
+        self._games = [BaseGameController]
 
     def get_games_list(self):
         """
@@ -41,7 +41,7 @@ class MainMenuModel:
         Returns:
             GameController: GameController type of the game at the index given
         """
-        if index >= len(self._games):
+        if index >= len(self._games) or index < 0:
             raise ItemNotFoundError(index, "MainMenuModel")
         return self._games[index]
 

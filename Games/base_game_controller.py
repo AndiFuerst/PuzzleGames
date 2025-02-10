@@ -2,14 +2,17 @@
 This file holds the controller for a Parent class of games
 """
 
-class BaseGame:
+from Games.base_game_view import BaseGameView
 
-    name = "BaseGame"
+class BaseGameController:
     """
     This class contains the controller a Parent class of games
     """
+
+    name = "BaseGame"
+    
     def __init__(self):
-        pass
+        self._view = BaseGameView(self.name)
 
     def run(self):
         """
@@ -25,4 +28,4 @@ class BaseGame:
         Returns:
             str: The Name of the Game
         """
-        return BaseGame.name
+        return BaseGameController.name
